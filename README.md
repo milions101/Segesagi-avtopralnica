@@ -1,0 +1,2 @@
+# Segesagi-avtopralnica
+Mobilna avtopralnica
