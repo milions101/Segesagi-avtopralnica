@@ -276,6 +276,7 @@ nav {
 .alt-content .section-label { text-align: left; }
 .alt-content .section-title { text-align: left; margin-bottom: 20px; }
 .alt-content p { font-size: 15px; font-weight: 300; color: var(--text-2); line-height: 1.82; margin-bottom: 28px; }
+
 /* ─── SERVICES ─── */
 .services-section { padding: 120px 6%; background: var(--bg); }
 .services-section .section-label { text-align: center; }
@@ -671,7 +672,7 @@ footer {
 }
 
 .ba-handle::after {
-  content: '◄ ►';
+  content: '◀ ▶';
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
@@ -1302,7 +1303,7 @@ if (typeof gsap !== 'undefined') {
     scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
   });
 } else {
-  // Fallback: pokazi hero elemente brez animacije
+  // Fallback: pokaži hero elemente brez animacije
   ['#h1','#h2','#h3','#h4','#h5','#h6'].forEach(id => {
     const el = document.querySelector(id);
     if (el) { el.style.opacity = '1'; el.style.transform = 'none'; }
@@ -1328,7 +1329,7 @@ document.querySelectorAll('[data-ba]').forEach(item => {
   function setPos(x) {
     const rect = item.getBoundingClientRect();
     let pct = Math.min(Math.max((x - rect.left) / rect.width * 100, 2), 98);
-    after.style.clipPath = 'inset(0 0 0 ' + pct + '%)';
+    after.style.clipPath = `inset(0 0 0 ${pct}%)`;
     handle.style.left = pct + '%';
   }
 
