@@ -3,7 +3,56 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SegeSagi — Mobilna Avtopralnica Ljubljana</title>
+<title>SegeSagi — Mobilna Avtopralnica Ljubljana in Okolica | Pridemo k Vam</title>
+<meta name="description" content="Mobilna avtopralnica Ljubljana in okolica. Ročno pranje avtomobila pri vas doma ali v pisarni. Brez čakalnih vrst, brez predplačila. Rezervirajte termin online.">
+<link rel="canonical" href="https://segesagi-avti.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://segesagi-avti.com/">
+<meta property="og:title" content="SegeSagi — Mobilna Avtopralnica Ljubljana in Okolica">
+<meta property="og:description" content="Ročno pranje avtomobila pri vas doma ali v pisarni. Brez čakalnih vrst, brez predplačila. Pridemo k vam — Ljubljana in okolica.">
+<meta property="og:image" content="https://segesagi-avti.com/hero.jpg.jpg">
+<meta property="og:locale" content="sl_SI">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- LocalBusiness Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoWash",
+  "name": "SegeSagi Mobilna Avtopralnica",
+  "description": "Mobilna avtopralnica Ljubljana in okolica. Ročno pranje avtomobila pri vas doma ali v pisarni.",
+  "url": "https://segesagi-avti.com/",
+  "telephone": "+386-30-305-310",
+  "priceRange": "€€",
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 46.0569,
+      "longitude": 14.5058
+    },
+    "geoRadius": "30000"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ljubljana",
+    "addressCountry": "SI"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "08:00",
+    "closes": "18:00"
+  },
+  "sameAs": [],
+  "offers": {
+    "@type": "Offer",
+    "description": "Ročno pranje avtomobila na lokaciji stranke"
+  }
+}
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -82,7 +131,7 @@ body {
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 6%; height: 64px;
+  padding: 0 6%; height: 72px;
   background: rgba(255,255,255,0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -113,7 +162,7 @@ nav {
 
 /* ─── HERO ─── */
 .hero {
-  position: relative; height: 100dvh; min-height: 640px;
+  position: relative; height: 100dvh; min-height: 760px;
   display: flex; align-items: flex-end;
   padding: 0 6% 9%; overflow: hidden;
 }
@@ -282,8 +331,8 @@ nav {
 .services-section .section-label { text-align: center; }
 .services-section .section-title { text-align: center; margin-bottom: 64px; }
 .services-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 18px; max-width: 1060px; margin: 0 auto 48px;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 18px; max-width: 1280px; margin: 0 auto 48px;
 }
 .service-card {
   border: 1px solid var(--border); border-radius: 12px;
@@ -561,12 +610,25 @@ footer {
   padding: 14px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none;
 }
 
+/* ─── KRATEK EKRAN (manjši monitor) ─── */
+@media (max-height: 750px) and (min-width: 601px) {
+  .hero { align-items: center; padding-top: 90px; }
+  .hero-title { font-size: clamp(36px, 5vw, 58px); }
+  .hero-sub { font-size: 15px; margin-top: 12px; }
+}
+
+/* ─── NAV OFFSET — vsi telefoni ─── */
+@media (max-width: 768px) {
+  .hero { padding-top: 90px; }
+}
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 900px) {
   .step-item { grid-template-columns: 64px 1fr; gap: 24px; }
   .step-num { font-size: 48px; }
-  .services-grid { grid-template-columns: 1fr; max-width: 440px; margin-inline: auto; }
-  .service-card.wide { grid-column: span 1; }
+  .services-grid { grid-template-columns: 1fr 1fr; max-width: 700px; margin-inline: auto; }
+  .service-card.wide { grid-column: span 2; }
+
   .alt-section { grid-template-columns: 1fr; }
   .alt-section.reverse { direction: ltr; }
   .benefits-section { grid-template-columns: 1fr; }
@@ -579,7 +641,7 @@ footer {
 }
 @media (max-width: 600px) {
   .hero-title { letter-spacing: -2px; }
-  .hero { height: 100dvh; }
+  .hero { height: 100dvh; padding-top: 90px; min-height: 700px; }
   @supports not (height: 100dvh) { .hero { height: 100vh; } }
   .nav-phone { display: none; }
   .stat-bar-item { padding: 20px 24px; }
@@ -597,6 +659,8 @@ footer {
   .sbc-price { font-size: 24px; }
   .sbc-name { font-size: 13px; }
   .guarantee-line { flex-direction: column; text-align: center; gap: 5px; }
+  .services-grid { grid-template-columns: 1fr; max-width: 440px; }
+  .service-card.wide { grid-column: span 1; }
 }
 
 /* ─── BEFORE/AFTER SLIDER ─── */
@@ -723,14 +787,7 @@ footer {
 <!-- NAV -->
 <nav>
   <a class="nav-logo" href="#">
-    <svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="30" height="30" rx="7" fill="#0A579F"/>
-      <path d="M5 18.5Q9 11 15 11Q21 11 25 18.5" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
-      <circle cx="9" cy="20.5" r="2.3" fill="white"/>
-      <circle cx="21" cy="20.5" r="2.3" fill="white"/>
-      <path d="M13 15Q15 8 17 15" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-    </svg>
-    Sege<span>Sagi</span>
+    <img src="logo.png.png" alt="SegeSagi" style="height:62px; width:auto;">
   </a>
   <div class="nav-right">
     <a class="nav-phone" href="tel:030305310">030 305 310</a>
@@ -953,7 +1010,7 @@ footer {
           <path d="m9 12 2 2 4-4"/>
         </svg>
       </div>
-      <div class="service-name">Odstranjevanje vonja po cigaretah</div>
+      <div class="service-name">Odstranjevanje cigaretnega vonja</div>
       <div class="service-price">190 <span class="cur">€</span></div>
       <p class="service-desc">Tretma z ozonom, ki dejansko deluje. Vonj ne bo le prekrit, temveč trajno odstranjen. Garantirano ali vrnemo denar.</p>
       <ul class="service-features">
@@ -1093,10 +1150,10 @@ footer {
 
     <div class="ba-item reveal" data-ba>
       <div class="ba-before">
-        <img src="1-prej.jpg" alt="Prej">
+        <img src="1-prej.jpg" alt="Avtomobil pred ročnim pranjem - umazana zunanjost">
       </div>
       <div class="ba-after">
-        <img src="1-potem.jpg" alt="Potem">
+        <img src="1-potem.jpg" alt="Avtomobil po ročnem pranju SegeSagi - bleščeča zunanjost">
       </div>
       <div class="ba-handle"></div>
       <span class="ba-label-before">Prej</span>
@@ -1105,10 +1162,10 @@ footer {
 
     <div class="ba-item reveal" data-ba>
       <div class="ba-before">
-        <img src="2-prej.jpg" alt="Prej">
+        <img src="2-prej.jpg" alt="Umazan avto pred mobilnim pranjem - Ljubljana">
       </div>
       <div class="ba-after">
-        <img src="2-potem.jpg" alt="Potem">
+        <img src="2-potem.jpg" alt="Čist avto po mobilnem pranju SegeSagi">
       </div>
       <div class="ba-handle"></div>
       <span class="ba-label-before">Prej</span>
@@ -1117,10 +1174,10 @@ footer {
 
     <div class="ba-item reveal" data-ba>
       <div class="ba-before">
-        <img src="3-prej.jpg" alt="Prej">
+        <img src="3-prej.jpg" alt="Notranjost avtomobila pred čiščenjem">
       </div>
       <div class="ba-after">
-        <img src="3-potem.jpg" alt="Potem">
+        <img src="3-potem.jpg" alt="Očiščena notranjost avtomobila - SegeSagi detajling">
       </div>
       <div class="ba-handle"></div>
       <span class="ba-label-before">Prej</span>
@@ -1129,10 +1186,10 @@ footer {
 
     <div class="ba-item reveal" data-ba>
       <div class="ba-before">
-        <img src="4-prej.jpg" alt="Prej">
+        <img src="4-prej.jpg" alt="Avto pred ročnim pranjem - umazana platišča">
       </div>
       <div class="ba-after">
-        <img src="4-potem.jpg" alt="Potem">
+        <img src="4-potem.jpg" alt="Zasijana platišča po pranju SegeSagi">
       </div>
       <div class="ba-handle"></div>
       <span class="ba-label-before">Prej</span>
@@ -1141,10 +1198,10 @@ footer {
 
     <div class="ba-item reveal" data-ba>
       <div class="ba-before">
-        <img src="5-prej.jpg" alt="Prej">
+        <img src="5-prej.jpg" alt="Zunanjost vozila pred mobilnim pranjem Ljubljana">
       </div>
       <div class="ba-after">
-        <img src="5-potem.jpg" alt="Potem">
+        <img src="5-potem.jpg" alt="Čista zunanjost vozila po SegeSagi pranju">
       </div>
       <div class="ba-handle"></div>
       <span class="ba-label-before">Prej</span>
@@ -1153,10 +1210,10 @@ footer {
 
     <div class="ba-item reveal" data-ba>
       <div class="ba-before">
-        <img src="6-prej.jpg" alt="Prej">
+        <img src="6-prej.jpg" alt="Umazana notranjost avta pred čiščenjem">
       </div>
       <div class="ba-after">
-        <img src="6-potem.jpg" alt="Potem">
+        <img src="6-potem.jpg" alt="Temeljito očiščena notranjost avtomobila SegeSagi">
       </div>
       <div class="ba-handle"></div>
       <span class="ba-label-before">Prej</span>
@@ -1170,7 +1227,7 @@ footer {
 <section class="booking-section" id="rezervacija">
   <p class="section-label reveal">Rezervacija</p>
   <h2 class="section-title reveal">Rezervirajte termin<br>pri vas doma.</h2>
-  <p class="reveal">Izberite storitev, ki jo potrebujete — termin je prost v <strong style="color:#fff">24–48 urah</strong>.</p>
+  <p class="reveal">Izberite storitev, ki jo potrebujete — rezervirajte termin <strong style="color:#fff">v 2 minutah</strong>.</p>
 
   <div class="booking-actions reveal">
     <a class="btn-primary" href="https://calendly.com/segesagi-avti" target="_blank">Izberi termin →</a>
@@ -1198,7 +1255,7 @@ footer {
     </div>
     <div class="faq-item reveal">
       <div class="faq-q">Koliko časa traja pranje?<span class="faq-icon">+</span></div>
-      <div class="faq-a">Odvisno od storitve. Zunanje pranje traja približno 45 minut, kompletno globinsko čiščenje pa 2–3 ure.</div>
+      <div class="faq-a">Odvisno od storitve: zunanje pranje, sesanje in nega usnja trajajo ~1,5 ure, kompletno globinsko čiščenje ~5 ur, odstranjevanje cigaretnega vonja pa ~8 ur.</div>
     </div>
     <div class="faq-item reveal">
       <div class="faq-q">Kako plačam?<span class="faq-icon">+</span></div>
